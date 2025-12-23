@@ -1,5 +1,7 @@
-import Link from "next/link"
-import { Mail, Linkedin, Twitter } from "lucide-react"
+import Link from "next/link";
+import { Mail, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
+import capstoneLogo from "../assets/images/capstoneLogo.webp";
 
 export function Footer() {
   return (
@@ -8,9 +10,15 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Brand */}
           <div className="space-y-2">
-            <div className="text-xl font-bold text-main">SmartNationX</div>
-            <p className="text-sm text-muted">CIO Awards & Conference 2026</p>
-            <p className="text-xs text-muted">Organised by Capstone Business Intelligence</p>
+            {/* <div className="text-xl font-bold text-main">SmartNationX</div> */}
+            {/* <p className="text-sm text-muted">CIO Awards & Conference 2026</p> */}
+            <p className="text-xs text-muted px-5">Organised by</p>
+            <Image
+              src={capstoneLogo}
+              alt="SmartNationX"
+              width={140}
+              height={140}
+            />
           </div>
 
           {/* Links */}
@@ -27,30 +35,28 @@ export function Footer() {
             <Link href="#venue" className="hover:text-main transition-colors">
               Venue
             </Link>
-            <Link href="#register" className="hover:text-main transition-colors">
+            <Link
+              href="#register"
+              className="hover:text-main transition-colors"
+            >
               Register
             </Link>
           </div>
 
           {/* Social */}
           <div className="flex justify-center md:justify-end gap-4">
-            <a
+            {/* <a
               href="#"
               className="w-10 h-10 bg-panel-soft border border-border-soft rounded-full flex items-center justify-center text-muted hover:text-main hover:border-accent-green transition-all"
             >
               <Mail className="w-5 h-5" />
-            </a>
+            </a> */}
             <a
-              href="#"
+              href="https://www.linkedin.com/company/capstonemena/?viewAsMember=true"
+              target="_blank"
               className="w-10 h-10 bg-panel-soft border border-border-soft rounded-full flex items-center justify-center text-muted hover:text-main hover:border-accent-green transition-all"
             >
               <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 bg-panel-soft border border-border-soft rounded-full flex items-center justify-center text-muted hover:text-main hover:border-accent-green transition-all"
-            >
-              <Twitter className="w-5 h-5" />
             </a>
           </div>
         </div>
@@ -60,5 +66,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

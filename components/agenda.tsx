@@ -296,10 +296,18 @@ export function Agenda() {
   return (
     <section id="agenda" className="py-20 lg:py-28 bg-body text-main">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="mb-14 text-center">
-          <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight">
+        <div className="mb-16 text-center space-y-4">
+          <span className="inline-block px-4 py-1.5 bg-accent-emerald/10 border border-accent-emerald/30 text-accent-emerald text-xs font-semibold uppercase tracking-wider rounded-full">
+            Agenda
+          </span>
+
+          <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-main">
             Event Agenda
           </h2>
+
+          <p className="max-w-xl mx-auto text-base lg:text-lg text-muted">
+            A day of insights, recognition & meaningful connections
+          </p>
         </div>
 
         <Accordion

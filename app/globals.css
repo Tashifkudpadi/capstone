@@ -160,6 +160,9 @@
 /* Custom utility classes for SmartNationX theme */
 .bg-body {
   background-color: var(--bg-body);
+  /* background-color: radial-gradient(circle at 0% 0%, #022c22 0, transparent 55%),
+    radial-gradient(circle at 100% 0%, #052e16 0, transparent 55%),
+    radial-gradient(circle at 50% 120%, #020617 0, #000 70%); */
 }
 .bg-panel {
   background-color: var(--bg-panel);

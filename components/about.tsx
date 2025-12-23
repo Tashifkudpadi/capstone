@@ -39,9 +39,9 @@ export function About() {
 
             <div className="space-y-6 text-muted leading-relaxed">
               {[
-                "The SmartNationX CIO Awards & Conference is a premier business-driven platform dedicated to recognizing and empowering visionary CIOs and technology leaders who are shaping the next era of digital transformation, enterprise modernization and national competitiveness.",
-                "As ambitious national digital agendas accelerate—powered by AI innovation, cloud modernization, data intelligence, cybersecurity and Low-Code/No-Code (LCNC) adoption—CIOs have become the central architects of future-ready digital ecosystems. Their decisions directly influence productivity, resilience, citizen experiences and long-term growth.",
-                "The Confex brings together the country's top CIOs, CTOs, CDOs, digital transformation leaders and global technology experts for a high-impact agenda of insights, recognition and collaboration. Through visionary keynotes, leadership dialogues and an independently evaluated awards program, SmartNationX highlights achievements in AI integration, cloud transformation, data governance, LCNC-driven automation, cyber resilience and innovation leadership.",
+                "The SmartNationX CIO Awards & Conference is a premier business driven platform dedicated to recognizing and empowering visionary CIOs and technology leaders who are shaping the next era of digital transformation, enterprise modernization and national competitiveness.",
+                "As ambitious national digital agendas accelerate powered by AI innovation, cloud modernization, data intelligence, cybersecurity and Low Code/No Code (LCNC) adoption CIOs have become the central architects of future ready digital ecosystems. Their decisions directly influence productivity, resilience, citizen experiences and long-term growth.",
+                "The Confex brings together the country's top CIOs, CTOs, CDOs, digital transformation leaders and global technology experts for a high impact agenda of insights, recognition and collaboration. Through visionary keynotes, leadership dialogues and an independently evaluated awards program, SmartNationX highlights achievements in AI integration, cloud transformation, data governance, LCNC driven automation, cyber resilience and innovation leadership.",
               ].map((text, index) => (
                 <p
                   key={index}
@@ -56,7 +56,7 @@ export function About() {
                 </p>
               ))}
               <p
-                className={`text-main font-medium transition-all duration-500 ${
+                className={`transition-all duration-500  ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"

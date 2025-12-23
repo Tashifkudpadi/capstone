@@ -30,7 +30,7 @@ export function Hero() {
               <span className="w-2 h-2 bg-accent-green rounded-full animate-pulse" />
               <span className="text-sm text-muted">
                 <Calendar className="inline w-4 h-4 mr-1.5 text-accent-green-soft" />
-                5 April 2026 • Riyadh, Saudi Arabia
+                6 April 2026 • Riyadh, Saudi Arabia
               </span>
             </div>
 
@@ -43,11 +43,13 @@ export function Hero() {
               }`}
               style={{ transitionDelay: "150ms" }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-main leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-main leading-tight">
                 <span className="text-accent-green-soft">SmartNationX</span>
                 <br />
-                CIO Awards & Confex
               </h1>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-main leading-tight">
+                CIO Awards & Confex
+              </h3>
               <p className="text-lg text-muted leading-relaxed max-w-xl">
                 A premium Confex and CIO Awards platform celebrating visionary
                 technology leaders who are architecting intelligent, secure and
@@ -98,16 +100,25 @@ export function Hero() {
               style={{ transitionDelay: "450ms" }}
             >
               <Link
-                href="#register"
+                href="https://saudi.idasummit.com/sponsors"
+                target="_blank"
                 className="px-8 py-4 bg-accent-green hover:bg-accent-green/90 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-accent-green/30 hover:-translate-y-1 hover:scale-105"
               >
-                Register Interest
+                Sponsors Enquiry
               </Link>
               <Link
-                href="#themes"
+                href="https://saudi.idasummit.com/delegates"
+                target="_blank"
                 className="px-8 py-4 border border-border-strong text-main hover:bg-panel-soft font-semibold rounded-full transition-all duration-300 hover:-translate-y-1"
               >
-                Explore Key Themes
+                Delegate Enquiry
+              </Link>
+              <Link
+                href="https://saudi.idasummit.com/speakers"
+                target="_blank"
+                className="px-8 py-4 border border-border-strong text-main hover:bg-panel-soft font-semibold rounded-full transition-all duration-300 hover:-translate-y-1"
+              >
+                Speakers Enquiry
               </Link>
             </div>
 

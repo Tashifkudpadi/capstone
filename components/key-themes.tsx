@@ -53,7 +53,7 @@ export function KeyThemes() {
           {themes.map((theme, index) => (
             <div
               key={theme.title}
-              className={`group relative bg-gray-50 border border-gray-200 rounded-xl p-6 hover:border-accent-green/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent-green/10 ${
+              className={`group relative bg-gray-50 border bg-panel-soft border-gray-200 border border-gray-200 rounded-xl p-6 hover:border-accent-green/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-accent-green/10 ${
                 isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -66,7 +66,7 @@ export function KeyThemes() {
               <div className="w-12 h-12 bg-accent-green/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent-green/20 group-hover:scale-110 transition-all duration-300">
                 <theme.icon className="w-6 h-6 text-accent-green" />
               </div>
-              <h3 className="text-sm font-semibold text-gray-900 leading-snug pr-8">
+              <h3 className="text-sm font-semibold text-white-900 leading-snug pr-8">
                 {theme.title}
               </h3>
             </div>

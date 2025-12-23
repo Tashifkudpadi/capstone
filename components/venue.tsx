@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { MapPin, Building2, Plane, Hotel } from "lucide-react"
-import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import { MapPin, Building2, Plane, Hotel } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export function Venue() {
-  const { ref, isVisible } = useScrollAnimation<HTMLElement>()
+  const { ref, isVisible } = useScrollAnimation<HTMLElement>();
 
   return (
     <section ref={ref} id="venue" className="py-20 lg:py-32">
@@ -13,48 +13,80 @@ export function Venue() {
           {/* Content - slides in from left */}
           <div
             className={`space-y-8 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 -translate-x-12"
             }`}
           >
             <div className="space-y-4">
               <span className="inline-block px-4 py-1.5 bg-accent-emerald/10 border border-accent-emerald/30 text-accent-green-soft text-xs font-semibold uppercase tracking-wider rounded-full">
                 Event Venue
               </span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-main">Riyadh, Saudi Arabia</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-main">
+                Riyadh, Saudi Arabia
+              </h2>
               <p className="text-muted leading-relaxed">
-                Join us in the heart of Saudi Arabia's capital city, a thriving hub of innovation and digital
-                transformation. The venue will be announced soon.
+                Join us in the heart of Saudi Arabia's capital city, a thriving
+                hub of innovation and digital transformation. The venue will be
+                announced soon.
+              </p>
+              <p className="text-muted leading-relaxed">
+                It will offer a world-class setting designed to facilitate
+                high-impact discussions, executive networking, and knowledge
+                exchange among CIOs and digital leaders.
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-4">
+            {/* <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { icon: Building2, title: "Premium Venue", desc: "World-class conference facilities" },
-                { icon: Plane, title: "Easy Access", desc: "Near King Khalid International Airport" },
-                { icon: Hotel, title: "Accommodation", desc: "Partner hotels nearby" },
-                { icon: MapPin, title: "Central Location", desc: "Heart of Riyadh's business district" },
+                {
+                  icon: Building2,
+                  title: "Premium Venue",
+                  desc: "World-class conference facilities",
+                },
+                {
+                  icon: Plane,
+                  title: "Easy Access",
+                  desc: "Near King Khalid International Airport",
+                },
+                {
+                  icon: Hotel,
+                  title: "Accommodation",
+                  desc: "Partner hotels nearby",
+                },
+                {
+                  icon: MapPin,
+                  title: "Central Location",
+                  desc: "Heart of Riyadh's business district",
+                },
               ].map((item, index) => (
                 <div
                   key={item.title}
                   className={`flex items-start gap-4 p-4 bg-panel border border-border-soft rounded-xl hover:border-accent-green/50 hover:bg-panel-soft transition-all duration-300 hover:-translate-y-1 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
                   }`}
                   style={{ transitionDelay: `${400 + index * 100}ms` }}
                 >
                   <item.icon className="w-6 h-6 text-accent-green-soft flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-main text-sm">{item.title}</h3>
+                    <h3 className="font-semibold text-main text-sm">
+                      {item.title}
+                    </h3>
                     <p className="text-xs text-muted mt-1">{item.desc}</p>
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Map/Visual - slides in from right */}
           <div
             className={`relative transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-12"
             }`}
             style={{ transitionDelay: "200ms" }}
           >
@@ -70,7 +102,9 @@ export function Venue() {
                     <h3 className="text-xl font-bold text-main">Riyadh</h3>
                     <p className="text-muted">Saudi Arabia</p>
                   </div>
-                  <p className="text-sm text-accent-green-soft font-medium">5 April 2026</p>
+                  <p className="text-sm text-accent-green-soft font-medium">
+                    6 April 2026
+                  </p>
                 </div>
               </div>
               {/* Decorative elements - animated */}
@@ -81,5 +115,5 @@ export function Venue() {
         </div>
       </div>
     </section>
-  )
+  );
 }

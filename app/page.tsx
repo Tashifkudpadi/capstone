@@ -7,6 +7,7 @@ import { Agenda } from "@/components/agenda";
 import { Venue } from "@/components/venue";
 import { Register } from "@/components/register";
 import { Footer } from "@/components/footer";
+import { Industries } from "@/components/industries";
 
 export default function HomePage() {
   return (
@@ -32,6 +33,7 @@ export default function HomePage() {
         <Hero />
         <About />
         <KeyThemes />
+        <Industries />
         <Experience />
         <Agenda />
         <Venue />
