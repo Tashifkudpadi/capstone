@@ -47,7 +47,11 @@ export function Industries() {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>();
 
   return (
-    <section ref={ref} id="industries" className="py-20 lg:py-32 bg-body">
+    <section
+      ref={ref}
+      id="industries"
+      className="py-20 lg:py-32 bg-body border-b border-gray-800"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div

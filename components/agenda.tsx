@@ -294,7 +294,10 @@ export function Agenda() {
   );
 
   return (
-    <section id="agenda" className="py-20 lg:py-28 bg-body text-main">
+    <section
+      id="agenda"
+      className="py-20 lg:py-28 bg-body text-main border-b border-gray-800"
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="mb-16 text-center space-y-4">
           <span className="inline-block px-4 py-1.5 bg-accent-emerald/10 border border-accent-emerald/30 text-accent-emerald text-xs font-semibold uppercase tracking-wider rounded-full">
@@ -342,7 +345,9 @@ export function Agenda() {
                 <AccordionTrigger className="group py-5 hover:no-underline [&>svg]:hidden cursor-pointer">
                   <div className="grid md:grid-cols-[180px_1fr] gap-2 md:gap-8 text-left">
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-muted">{item.time}</span>
+                      <span className="font-mono text-accent-gold">
+                        {item.time}
+                      </span>
                       <svg
                         className="
                           h-4 w-4 text-muted transition-transform duration-200

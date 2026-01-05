@@ -7,7 +7,11 @@ export function Venue() {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>();
 
   return (
-    <section ref={ref} id="venue" className="py-20 lg:py-32">
+    <section
+      ref={ref}
+      id="venue"
+      className="py-20 lg:py-32 border-b border-gray-800 border-b border-gray-800"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content - slides in from left */}

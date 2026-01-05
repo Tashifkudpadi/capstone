@@ -34,7 +34,11 @@ export function KeyThemes() {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>();
 
   return (
-    <section ref={ref} id="themes" className="py-20 lg:py-32 bg-body">
+    <section
+      ref={ref}
+      id="themes"
+      className="py-20 lg:py-32 bg-body border-b border-gray-800"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`text-center mb-16 space-y-4 transition-all duration-700 ${

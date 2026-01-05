@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { Mail, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
-import capstoneLogo from "../assets/images/capstoneLogo.webp";
+import capstoneLogo from "../assets/images/capstoneLogo.png";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="py-12 border-t border-border-soft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,30 +18,36 @@ export function Footer() {
             <Image
               src={capstoneLogo}
               alt="SmartNationX"
-              width={140}
-              height={140}
+              width={160}
+              height={160}
             />
           </div>
 
           {/* Links */}
           <div className="flex flex-wrap justify-center gap-6 text-sm text-muted">
-            <Link href="#about" className="hover:text-main transition-colors">
+            <Link
+              href="#about"
+              className="hover:text-accent-gold transition-colors"
+            >
               About
             </Link>
-            <Link href="#themes" className="hover:text-main transition-colors">
-              Themes
-            </Link>
-            <Link href="#agenda" className="hover:text-main transition-colors">
-              Agenda
-            </Link>
-            <Link href="#venue" className="hover:text-main transition-colors">
-              Venue
+            <Link
+              href="#themes"
+              className="hover:text-accent-gold transition-colors"
+            >
+              Key Themes
             </Link>
             <Link
-              href="#register"
-              className="hover:text-main transition-colors"
+              href="#experience"
+              className="hover:text-accent-gold transition-colors"
             >
-              Register
+              Experience
+            </Link>
+            <Link
+              href="#agenda"
+              className="hover:text-accent-gold transition-colors"
+            >
+              Agenda
             </Link>
           </div>
 
@@ -62,7 +70,8 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border-soft text-center text-xs text-muted">
-          © 2026 SmartNationX CIO Awards & Conference. All rights reserved.
+          © {currentYear} SmartNationX CIO Awards & Conference. All rights
+          reserved.
         </div>
       </div>
     </footer>

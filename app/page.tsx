@@ -8,6 +8,7 @@ import { Venue } from "@/components/venue";
 import { Register } from "@/components/register";
 import { Footer } from "@/components/footer";
 import { Industries } from "@/components/industries";
+import { AboutOrganiser } from "@/components/aboutOrganiser";
 
 export default function HomePage() {
   return (
@@ -36,6 +37,7 @@ export default function HomePage() {
         <Industries />
         <Experience />
         <Agenda />
+        <AboutOrganiser />
         <Venue />
         <Register />
       </main>

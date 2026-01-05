@@ -6,11 +6,15 @@ export function About() {
   const { ref, isVisible } = useScrollAnimation<HTMLElement>();
 
   return (
-    <section ref={ref} id="about" className="py-20 lg:py-32 bg-body">
+    <section
+      ref={ref}
+      id="about"
+      className="py-20 lg:py-32 bg-body border-b border-gray-800"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div
-            className={`bg-panel border border-border-soft rounded-2xl p-8 lg:p-12 space-y-8 transition-all duration-700 ${
+            className={`bg-panel-soft border border-border-soft rounded-2xl p-8 lg:p-12 space-y-8 transition-all duration-700 ${
               isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >
