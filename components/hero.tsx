@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { IframeModal } from "./IframeModal";
+import SmartnationIcon from "../assets/images/smartnationicon.png";
+import Image from "next/image";
 
 export function Hero() {
   const [modalUrl, setModalUrl] = useState("");
@@ -50,10 +52,19 @@ export function Hero() {
 
               {/* Title */}
               <div className="space-y-4">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl m-0 font-bold text-white leading-tight">
-                  <span className="text-accent-green-soft">SmartNationX</span>
-                  <br />
-                </h1>
+                <div className="flex items-center gap-1">
+                  <Image
+                    src={SmartnationIcon}
+                    alt="Capstone Business Intelligence"
+                    width={40}
+                    height={40}
+                    className="object-contain"
+                  />
+                  <h1 className="text-3xl sm:text-4xl lg:text-5xl m-0 font-bold text-white leading-tight">
+                    <span className="text-accent-green-soft">SmartNationX</span>
+                    <br />
+                  </h1>
+                </div>
                 <h3 className="text-3xl sm:text-4xl lg:text-5xl m-0 font-bold text-white leading-tight">
                   CIO Awards & Confex
                 </h3>
@@ -96,23 +107,49 @@ export function Hero() {
                   onClick={() =>
                     openModal("https://saudi.idasummit.com/sponsors")
                   }
-                  className="px-8 py-4 cursor-pointer bg-accent-green hover:bg-accent-green/90 text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-accent-green/30 hover:-translate-y-1 hover:scale-105"
+                  className="
+  px-8 py-4 cursor-pointer
+  bg-accent-green text-white
+  font-semibold rounded-full
+  border border-accent-green
+  transition-all duration-300 ease-out
+  hover:bg-white! hover:text-accent-green
+  hover:shadow-xl hover:shadow-accent-green/30
+    "
                 >
                   Sponsors Enquiry
                 </button>
+
                 <button
                   onClick={() =>
                     openModal("https://saudi.idasummit.com/delegates")
                   }
-                  className="px-8 py-4 cursor-pointer border border-gray-600 text-white hover:bg-gray-800 font-semibold rounded-full transition-all duration-300 hover:-translate-y-1"
+                  className="
+  px-8 py-4 cursor-pointer
+  bg-accent-green text-white
+  font-semibold rounded-full
+  border border-accent-green
+  transition-all duration-300 ease-out
+  hover:bg-white! hover:text-accent-green
+  hover:shadow-xl hover:shadow-accent-green/30
+    "
                 >
                   Delegate Enquiry
                 </button>
+
                 <button
                   onClick={() =>
                     openModal("https://saudi.idasummit.com/speakers")
                   }
-                  className="px-8 py-4 cursor-pointer border border-gray-600 text-white hover:bg-gray-800 font-semibold rounded-full transition-all duration-300 hover:-translate-y-1"
+                  className="
+  px-8 py-4 cursor-pointer
+  bg-accent-green text-white
+  font-semibold rounded-full
+  border border-accent-green
+  transition-all duration-300 ease-out
+  hover:bg-white! hover:text-accent-green
+  hover:shadow-xl hover:shadow-accent-green/30
+    "
                 >
                   Speakers Enquiry
                 </button>
@@ -129,12 +166,12 @@ export function Hero() {
               className="relative transition-all duration-1000"
               style={{ transitionDelay: "300ms" }}
             >
-              <div className="absolute -inset-4 bg-gradient-to-br from-accent-green/20 via-accent-emerald/10 to-transparent rounded-3xl blur-2xl animate-pulse" />
+              <div className="absolute -inset-4 bg-linear-to-br from-accent-green/20 via-accent-emerald/10 to-transparent rounded-3xl blur-2xl animate-pulse" />
               <div className="relative bg-panel border border-border-soft rounded-2xl p-8 space-y-6 hover:border-emerald-400/40 transition-all duration-500">
                 <div className="absolute top-0 right-0 w-32 h-32 border border-accent-green/20 rounded-full -translate-y-1/2 translate-x-1/2 animate-[spin_20s_linear_infinite]" />
 
-                <div className="inline-block px-3 py-1.5 bg-accent-gold/10 border border-accent-gold/30 rounded-full">
-                  <span className="text-xs font-medium text-accent-gold uppercase tracking-wider">
+                <div className="inline-block px-3 py-1.5 bg-accent-green/10 border border-emerald-500/30  rounded-full">
+                  <span className="text-xs font-medium text-emerald-400 uppercase tracking-wider">
                     Saudi Arabia CIO Awards 2026
                   </span>
                 </div>

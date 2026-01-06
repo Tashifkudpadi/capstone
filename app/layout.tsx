@@ -12,26 +12,13 @@ const poppins = Poppins({
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SmartNationX CIO Awards & Conference – Riyadh 2026",
+  title: "SmartNationX CIO Awards & Confex – Riyadh 2026",
   description:
-    "SmartNationX CIO Awards & Conference – 5 April 2026, Riyadh, Saudi Arabia. A premier CIO Confex and awards platform celebrating visionary technology leaders.",
-  // icons: {
-  //   icon: [
-  //     {
-  //       url: "/icon-light-32x32.png",
-  //       media: "(prefers-color-scheme: light)",
-  //     },
-  //     {
-  //       url: "/icon-dark-32x32.png",
-  //       media: "(prefers-color-scheme: dark)",
-  //     },
-  //     {
-  //       url: "/icon.svg",
-  //       type: "image/svg+xml",
-  //     },
-  //   ],
-  //   apple: "/apple-icon.png",
-  // },
+    "SmartNationX CIO Awards & Confex – 6 April 2026, Riyadh, Saudi Arabia. A premier CIO Confex and awards platform celebrating visionary technology leaders.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

@@ -345,7 +345,7 @@ export function Agenda() {
                 <AccordionTrigger className="group py-5 hover:no-underline [&>svg]:hidden cursor-pointer">
                   <div className="grid md:grid-cols-[180px_1fr] gap-2 md:gap-8 text-left">
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-accent-gold">
+                      <span className="font-mono text-accent-green">
                         {item.time}
                       </span>
                       <svg

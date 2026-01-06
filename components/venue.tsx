@@ -46,7 +46,7 @@ export function Venue() {
                 {
                   icon: Building2,
                   title: "Premium Venue",
-                  desc: "World-class conference facilities",
+                  desc: "World-class Confex facilities",
                 },
                 {
                   icon: Plane,

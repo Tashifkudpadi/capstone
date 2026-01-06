@@ -13,8 +13,10 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-2">
             {/* <div className="text-xl font-bold text-main">SmartNationX</div> */}
-            {/* <p className="text-sm text-muted">CIO Awards & Conference 2026</p> */}
-            <p className="text-xs text-muted px-5">Organised by</p>
+            {/* <p className="text-sm text-muted">CIO Awards & Confex 2026</p> */}
+            <p className="text-xs text-muted font-bold relative left-2.5 px-5">
+              Organised by
+            </p>
             <Image
               src={capstoneLogo}
               alt="SmartNationX"
@@ -70,8 +72,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-border-soft text-center text-xs text-muted">
-          © {currentYear} SmartNationX CIO Awards & Conference. All rights
-          reserved.
+          © {currentYear} SmartNationX CIO Awards & Confex. All rights reserved.
         </div>
       </div>
     </footer>

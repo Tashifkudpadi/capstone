@@ -49,7 +49,7 @@ export function Experience() {
             What You Will Experience
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-white-900">
-            Inside the SmartNationX CIO Awards & Conference
+            Inside the SmartNationX CIO Awards & Confex
           </h2>
         </div>
 

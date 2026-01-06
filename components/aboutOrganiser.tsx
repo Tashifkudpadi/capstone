@@ -20,8 +20,8 @@ export function AboutOrganiser() {
           }`}
         >
           {/* Logo */}
-          <div className="flex flex-col items-center lg:items-start">
-            <div className="bg-panel border border-border-soft rounded-xl p-6">
+          <div className="flex flex-col justify-center items-center lg:items-start h-full">
+            <div className="bg-panel border border-border-soft rounded-xl p-6 mt-5">
               <Image
                 src={capstoneLogo}
                 alt="Capstone Business Intelligence"
@@ -56,14 +56,14 @@ export function AboutOrganiser() {
               <p>
                 Capstone Business Intelligence is a global platform provider
                 specializing in high-impact business intelligence and emerging
-                technology conferences.
+                technology Confexs.
               </p>
 
               <p>
                 We curate executive-level forums that empower senior leaders
                 with actionable insights, strategic knowledge, and meaningful
                 networks. With deep industry expertise and a strong global
-                network, Capstone delivers meticulously designed conferences,
+                network, Capstone delivers meticulously designed Confexs,
                 leadership forums, and knowledge platforms.
               </p>
 
