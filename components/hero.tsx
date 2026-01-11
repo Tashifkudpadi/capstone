@@ -52,22 +52,25 @@ export function Hero() {
 
               {/* Title */}
               <div className="space-y-4">
-                <div className="flex items-center gap-1">
+                <div className="flex items-start gap-1 p-0">
                   <Image
                     src={SmartnationIcon}
                     alt="Capstone Business Intelligence"
-                    width={40}
-                    height={40}
-                    className="object-contain"
+                    width={80}
+                    height={80}
                   />
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl m-0 font-bold text-white leading-tight">
-                    <span className="text-accent-green-soft">SmartNationX</span>
-                    <br />
-                  </h1>
+                  <div className="mt-6 px-3">
+                    <h1 className="text-3xl sm:text-4xl lg:text-4xl m-0 font-bold text-white leading-tight">
+                      <span className="text-accent-green-soft">
+                        SmartNationX
+                      </span>
+                    </h1>
+                    <h3 className="text-3xl sm:text-4xl lg:text-4xl m-0 font-bold text-white leading-tight">
+                      CIO Awards & Confex
+                    </h3>
+                  </div>
                 </div>
-                <h3 className="text-3xl sm:text-4xl lg:text-5xl m-0 font-bold text-white leading-tight">
-                  CIO Awards & Confex
-                </h3>
+
                 <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
                   A premium Confex and CIO Awards platform celebrating visionary
                   technology leaders who are architecting intelligent, secure

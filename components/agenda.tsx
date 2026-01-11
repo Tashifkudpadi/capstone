@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -204,15 +204,23 @@ const agendaItems: AgendaItem[] = [
 
 function isCurrentSession(timeRange: string) {
   const now = new Date();
-  const [start, end] = timeRange.split("–").map((t) => t.trim());
+
+  const parts = timeRange.split("–").map((t) => t.trim());
+  if (parts.length !== 2) return false;
 
   const toMinutes = (t: string) => {
     const [h, m] = t.split(":").map(Number);
+    if (Number.isNaN(h) || Number.isNaN(m)) return NaN;
     return h * 60 + m;
   };
 
+  const start = toMinutes(parts[0]);
+  const end = toMinutes(parts[1]);
   const nowMinutes = now.getHours() * 60 + now.getMinutes();
-  return nowMinutes >= toMinutes(start) && nowMinutes <= toMinutes(end);
+
+  if (Number.isNaN(start) || Number.isNaN(end)) return false;
+
+  return nowMinutes >= start && nowMinutes <= end;
 }
 
 /* =========================
@@ -224,7 +232,6 @@ function RenderDescription({
 }: {
   description: AgendaDescription;
 }) {
-  // Simple paragraph
   if (typeof description === "string") {
     return (
       <p className="text-muted leading-relaxed text-sm md:text-base">
@@ -234,50 +241,24 @@ function RenderDescription({
   }
 
   return (
-    <div className="space-y-6">
-      {/* Intro text */}
+    <div className="space-y-4">
       {description.intro && (
         <p className="text-muted leading-relaxed text-sm md:text-base">
           {description.intro}
         </p>
       )}
 
-      {/* Nested accordion */}
       {description.sections && (
-        <Accordion type="single" collapsible className="space-y-2">
+        <ul className="space-y-2">
           {description.sections.map((section, index) => (
-            <AccordionItem
+            <li
               key={index}
-              value={`sub-${index}`}
-              className="border border-border-soft rounded-lg"
+              className="pl-4 border-l-2 border-accent-emerald text-sm text-muted"
             >
-              <AccordionTrigger className="group px-4 py-3 hover:no-underline [&>svg]:hidden">
-                <div className="flex items-center gap-3 text-left">
-                  {/* <svg
-                    className="
-                      h-3.5 w-3.5 text-muted transition-transform duration-200
-                      group-data-[state=open]:rotate-90
-                    "
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg> */}
-
-                  <h4 className="font-medium text-main">{section.heading}</h4>
-                </div>
-              </AccordionTrigger>
-
-              <AccordionContent className="px-4 pb-4">
-                <p className="text-muted leading-relaxed text-sm">
-                  {section.description}
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+              {section.heading}
+            </li>
           ))}
-        </Accordion>
+        </ul>
       )}
     </div>
   );
@@ -288,47 +269,51 @@ function RenderDescription({
 ========================= */
 
 export function Agenda() {
-  const currentIndex = useMemo(
-    () => agendaItems.findIndex((item) => isCurrentSession(item.time)),
-    []
-  );
+  const [openItem, setOpenItem] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const index = agendaItems.findIndex((item) => isCurrentSession(item.time));
+    if (index >= 0) {
+      setOpenItem(`agenda-${index}`);
+    }
+  }, []);
 
   return (
     <section
       id="agenda"
-      className="py-20 lg:py-28 bg-body text-main border-b border-gray-800"
+      className="py-20 lg:py-28 bg-body text-main border-b border-border-soft"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Header */}
         <div className="mb-16 text-center space-y-4">
           <span className="inline-block px-4 py-1.5 bg-accent-emerald/10 border border-accent-emerald/30 text-accent-emerald text-xs font-semibold uppercase tracking-wider rounded-full">
             Agenda
           </span>
 
-          <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-main">
+          <h2 className="text-3xl lg:text-4xl font-bold tracking-tight">
             Event Agenda
           </h2>
 
-          <p className="max-w-xl mx-auto text-base lg:text-lg text-muted">
+          <p className="max-w-xl mx-auto text-muted">
             A day of insights, recognition & meaningful connections
           </p>
         </div>
 
+        {/* Accordion */}
         <Accordion
           type="single"
           collapsible
-          defaultValue={
-            currentIndex >= 0 ? `agenda-${currentIndex}` : undefined
-          }
+          value={openItem}
+          onValueChange={setOpenItem}
           className="divide-y divide-border-soft"
         >
           {agendaItems.map((item, index) => {
-            const isActive = index === currentIndex;
             const expandable = Boolean(item.description);
 
             if (!expandable) {
               return (
-                <div key={index} className="py-5 border-b border-border-soft">
-                  <div className="grid md:grid-cols-[180px_1fr] gap-2 md:gap-8">
+                <div key={item.id} className="py-5">
+                  <div className="grid md:grid-cols-[180px_1fr] gap-4">
                     <span className="font-mono text-muted">{item.time}</span>
                     <h3 className="font-medium">{item.title}</h3>
                   </div>
@@ -338,21 +323,18 @@ export function Agenda() {
 
             return (
               <AccordionItem
-                key={index}
+                key={item.id}
                 value={`agenda-${index}`}
-                className={isActive ? "bg-accent-emerald/10" : ""}
+                className="border-none"
               >
-                <AccordionTrigger className="group py-5 hover:no-underline [&>svg]:hidden cursor-pointer">
-                  <div className="grid md:grid-cols-[180px_1fr] gap-2 md:gap-8 text-left">
+                <AccordionTrigger className="group py-5 hover:no-underline [&>svg]:hidden">
+                  <div className="grid md:grid-cols-[180px_1fr] gap-4 text-left">
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-accent-green">
+                      <span className="font-mono text-accent-emerald">
                         {item.time}
                       </span>
                       <svg
-                        className="
-                          h-4 w-4 text-muted transition-transform duration-200
-                          group-data-[state=open]:rotate-90
-                        "
+                        className="h-4 w-4 text-muted transition-transform group-data-[state=open]:rotate-90"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -361,13 +343,12 @@ export function Agenda() {
                         <polyline points="9 18 15 12 9 6" />
                       </svg>
                     </div>
-
                     <h3 className="text-lg font-medium">{item.title}</h3>
                   </div>
                 </AccordionTrigger>
 
                 <AccordionContent>
-                  <div className="md:grid md:grid-cols-[180px_1fr] md:gap-8">
+                  <div className="md:grid md:grid-cols-[180px_1fr] gap-4">
                     <div />
                     <div className="bg-panel-soft rounded-lg p-6">
                       <RenderDescription description={item.description!} />
